@@ -34,25 +34,14 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            display-name = "Base";
-            bindings = <
-&none      &kp F1     &kp F2    &kp F3    &kp F4     &kp F5  &kp F6                                                   &kp F7     &kp F8  &kp F9  &kp F10    &kp F11   &kp F12   &kp MINUS
-&kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T   &none                                                    &none      &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-&kp ESC    &kp A      &kp S     &kp D     &kp F      &kp G   &none     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none      &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B                        &kp HOME      &td_super                        &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&mo 2      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &to 2      &kp END       &kp PG_DN  &kp ENTER  &kp ENTER          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &none
-            >;
-        };
-
         keypad {
             display-name = "Kp";
             bindings = <
 &none      &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                                                                 &kp F7         &kp F8  &kp F9    &kp F10       &kp F11   &kp F12    &none
 &none      &kp Q   &kp W   &kp E   &kp R   &kp T   &none                                                                  &none          &kp Z   &kp U     &kp I         &kp O     &kp S      &none
-&kp TAB    &kp A   &kp S   &kp D   &kp F   &kp G   &none      &kp PAGE_DOWN  &kp PAGE_UP           &tog 3     &kp ESCAPE  &none          &kp H   &kp J     &kp K         &kp L     &kp P      &none
+&kp TAB    &kp A   &kp S   &kp D   &kp F   &kp G   &none      &kp PAGE_DOWN  &kp PAGE_UP           &tog 2     &kp ESCAPE  &none          &kp H   &kp J     &kp K         &kp L     &kp P      &none
 &kp LSHFT  &kp Y   &kp X   &kp C   &kp V   &kp B                             &kp LEFT_CONTROL      &td_super                             &kp N   &kp M     &kp COMMA     &kp DOT   &kt MINUS  &kp RSHFT
-&none      &none   &none   &none   &none           &kp SPACE  &to 2          &kp LEFT_ALT          &to 4      &kp ENTER   &kp BACKSPACE          &kp LEFT  &kp UP_ARROW  &kp DOWN  &kp RIGHT  &none
+&none      &none   &none   &none   &none           &kp SPACE  &to 1          &kp LEFT_ALT          &to 3      &kp ENTER   &kp BACKSPACE          &kp LEFT  &kp UP_ARROW  &kp DOWN  &kp RIGHT  &none
             >;
         };
 
