@@ -1,11 +1,10 @@
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/keys_de.h>  // <--- Deutsches Layout eingebunden
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/stp.h>
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/backlight.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/rgb.h>
 
 / {
     behaviors {
@@ -23,6 +22,7 @@
         };
 
         // Tap-Dance: 1x tippen = Super (LGUI), 2x tippen = Strg + Super (LCTRL + LGUI)
+
         td_super: tap_dance_super {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_SUPER";
@@ -38,33 +38,33 @@
         keypad {
             display-name = "Kp";
             bindings = <
-&none       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                                                                              &kp F7         &kp F8  &kp F9    &kp F10       &kp F11   &kp F12    &none
-&none       &kp Q   &kp W   &kp E   &kp R   &kp T   &none                                                                               &none          &kp Z   &kp U     &kp I         &kp O     &kp S      &none
-&kp TAB     &kp A   &kp S   &kp D   &kp F   &kp G   &none      &kp PAGE_DOWN  &kp PAGE_UP           &tog 2     &kp ESCAPE  &none          &kp H          &kp J   &kp K     &kp L         &kp P     &none
-&kp LSHFT   &kp Y   &kp X   &kp C   &kp V   &kp B                      &kp LEFT_CONTROL      &td_super                                            &kp N          &kp M   &kp COMMA     &kp DOT   &kt MINUS  &kp RSHFT
-&none       &none   &none   &none   &none           &kp SPACE  &to 1          &kp LEFT_ALT          &to 3      &kp ENTER   &kp BACKSPACE  &kp LEFT       &kp UP_ARROW  &kp DOWN  &kp RIGHT     &none
+&none      &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                                                                 &kp F7         &kp F8  &kp F9    &kp F10       &kp F11   &kp F12    &none
+&none      &kp Q   &kp W   &kp E   &kp R   &kp T   &none                                                                  &none          &kp Z   &kp U     &kp I         &kp O     &kp S      &none
+&kp TAB    &kp A   &kp S   &kp D   &kp F   &kp G   &none      &kp PAGE_DOWN  &kp PAGE_UP           &tog 2     &kp ESCAPE  &none          &kp H   &kp J     &kp K         &kp L     &kp P      &none
+&kp LSHFT  &kp Y   &kp X   &kp C   &kp V   &kp B                             &kp LEFT_CONTROL      &td_super                             &kp N   &kp M     &kp COMMA     &kp DOT   &kt MINUS  &kp RSHFT
+&none      &none   &none   &none   &none           &kp SPACE  &to 1          &kp LEFT_ALT          &to 3      &kp ENTER   &kp BACKSPACE          &kp LEFT  &kp UP_ARROW  &kp DOWN  &kp RIGHT  &none
             >;
         };
 
         NumbersAndMath {
             display-name = "Symbols";
             bindings = <
-&none   &none          &none          &none          &none          &none          &none                                                                               &none   &none          &none          &none          &none          &none   &none
-&trans  &trans         &kp DE_EURO    &trans         &kp DE_EXCL    &kp DE_PRCNT   &none                                                                               &none   &kp DE_AMPS    &kp DE_QUES    &trans         &trans         &trans  &trans
-&trans  &kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_3 &kp KP_NUMBER_4 &kp KP_NUMBER_5 &trans &trans       &trans &trans &none   &kp KP_NUMBER_6 &kp KP_NUMBER_7 &kp KP_NUMBER_8 &kp KP_NUMBER_9 &trans  &trans
-&trans  &kp DE_AE      &kp DE_OE      &kp DE_UE      &kp DE_SZ      &kp DE_MINUS                                        &trans      &trans                      &kp DE_PLUS    &kp DE_ASTERISK &kp DE_SLASH   &trans         &trans  &trans
-&trans  &trans         &trans         &trans         &trans                                         &trans &trans &trans       &trans &trans &trans                                      &trans         &trans         &trans  &trans  &trans
+&none   &none            &none            &none            &none            &none            &none                                                &none   &none            &none            &none            &none            &none   &none
+&trans  &trans           &kp DE_EURO      &trans           &kp DE_EXCL      &kp DE_PRCNT     &none                                                &none   &kp DE_AMPS      &kp DE_QUES      &trans           &trans           &trans  &trans
+&trans  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &trans  &trans      &trans  &trans  &none   &kp KP_NUMBER_6  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans  &trans
+&trans  &kp DE_AE        &kp DE_OE        &kp DE_UE        &kp DE_SZ        &kp DE_MINUS                              &trans      &trans                  &kp DE_PLUS      &kp DE_ASTERISK  &kp DE_SLASH     &trans           &trans  &trans
+&trans  &trans           &trans           &trans           &trans                            &trans           &trans  &trans      &trans  &trans  &trans                   &trans           &trans           &trans           &trans  &trans
             >;
         };
 
         mod {
             display-name = "Mod";
             bindings = <
-&none          &none  &none        &none  &none             &none              &none                                                                               &trans         &none          &none          &none         &none &none &none
-&none          &none  &none        &none  &kp DE_DQT        &kp DE_LBRC        &bootloader                                                                         &bootloader    &kp DE_RBRC    &kp DE_QUOT    &none         &none &none &none
-&studio_unlock &none  &kp DE_AT    &none  &none             &kp DE_LPAR        &none        &none &none      &none &none       &none          &kp DE_RPAR    &mmv MOVE_UP   &none          &none         &kp DE_PIPE &none
-&none          &none  &none        &none  &none             &kp DE_LT                                        &none      &none                         &kp DE_GT      &none          &none         &none         &none &none
-&none          &none  &none        &none  &none                                               &none &none &none &none &bl BL_TOG &rgb_ug RGB_TOG                                            &bl BL_INC    &bl BL_DEC     &none &none &none
+&none           &none  &none      &none  &none           &none                 &none                                             &trans           &none                  &none            &none       &none  &none        &none
+&none           &none  &none      &none  &kp LEFT_BRACE  &kp LEFT_BRACKET      &bootloader                                       &bootloader      &kp RIGHT_BRACKET      &kp RIGHT_BRACE  &none       &none  &none        &none
+&studio_unlock  &none  &kp DE_AT  &none  &none           &kp LEFT_PARENTHESIS  &none        &none  &none      &none  &none       &none            &kp RIGHT_PARENTHESIS  &mmv MOVE_UP     &none       &none  &kp DE_PIPE  &none
+&none           &none  &none      &none  &none           &kp LESS_THAN                             &none      &none                               &kp GREATER_THAN       &none            &none       &none  &none        &none
+&none           &none  &none      &none  &none                                 &none        &none  &none      &none  &bl BL_TOG  &rgb_ug RGB_TOG                         &bl BL_INC       &bl BL_DEC  &none  &none        &none
             >;
         };
 
