@@ -20,6 +20,18 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
+/ {
+    behaviors {
+        // Tap-Dance: 1x tippen = Super (LGUI), 2x tippen = Strg + Super (LCTRL + LGUI)
+        td_super: tap_dance_super {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_SUPER";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LGUI>, <&kp LC(LGUI)>;
+        };
+    };
+};
     };
 
   keymap {
